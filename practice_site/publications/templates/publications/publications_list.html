@@ -9,30 +9,18 @@
 <body>
   <section class="publications">
     <ul class="publications__list">
+      {% for publications_item in publications_items %}
       <li class="publications__item">
         <h3 class="publications__title">
-          Это заголовок первой публикации
+          {{publications_item.title}}
         </h3>
         <p class="publications__text">
-          Это текст первой публикации Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem vero ipsam saepe sapiente ducimus, nulla nemo est! Cum ullam quis corrupti perspiciatis, dolorum, consequuntur obcaecati vero, odit laudantium veniam eius.
+          {{ publications_item.text }}
         </p>
+        <span class="publications__date">Размещено: {{ publications_item.published_date }}</span>
+        <span class="publications__author">Автор: {{ publications_item.author }}</span>
       </li>
-      <li class="publications__item">
-        <h3 class="publications__title">
-          Это заголовок второй публикации
-        </h3>
-        <p class="publications__text">
-          Это текст второй публикации Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nobis et vero accusamus. Impedit quia, delectus, eius quidem incidunt corrupti quis magnam temporibus culpa omnis ducimus nobis dolorum commodi aut!
-        </p>
-      </li>
-      <li class="publications__item">
-        <h3 class="publications__title">
-          Это заголовок третьей публикации
-        </h3>
-        <p class="publications__text">
-          Это текст третьей публикации Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quasi assumenda maiores consectetur eius veniam necessitatibus corporis. Eos eaque sunt consequatur hic maiores? Expedita obcaecati accusamus provident fugiat quo ullam?
-        </p>
-      </li>
+      {% endfor %}
     </ul>
   </section>
 </body>
