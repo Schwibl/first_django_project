@@ -1,0 +1,18 @@
+{% extends '../base/page.html' %}
+
+{% block content %}
+<section class="publications">
+  <div class="publications__item publications__item_page">
+    <h3 class="publications__title">
+      <a href="{% url 'publications_item' pk=publications_item.pk %}" class="publications__link">
+        {{publications_item.title}}
+      </a>
+    </h3>
+    <p class="publications__text">
+      {{ publications_item.text }}
+    </p>
+    <span class="publications__date">Размещено: {{ publications_item.published_date }}</span>
+    <span class="publications__author">Автор: {{ publications_item.author }}</span>
+  </div>
+</section>
+{% endblock %}
